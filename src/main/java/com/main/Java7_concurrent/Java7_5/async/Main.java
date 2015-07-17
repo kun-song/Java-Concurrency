@@ -28,6 +28,9 @@ public class Main {
 
         pool.shutdown();
 
+        /**
+         * 1. join() 获取 sys 任务的执行结果
+         */
         List<String> results = sys.join();
         System.out.printf("C: %d files found.\n", results.size());
     }
