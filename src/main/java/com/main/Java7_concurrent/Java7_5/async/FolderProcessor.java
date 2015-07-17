@@ -39,6 +39,7 @@ public class FolderProcessor extends RecursiveTask<List<String>> {
                     FolderProcessor task = new FolderProcessor(content[i].getAbsolutePath(), extension);
                     /**
                      * 1. fork() 异步执行
+                     * 2. fork() 之后，本任务的工作线程依然会继续执行
                      */
                     task.fork();
                     taskList.add(task);
