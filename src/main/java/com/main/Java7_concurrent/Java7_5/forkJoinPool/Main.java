@@ -24,12 +24,13 @@ public class Main {
         ForkJoinPool pool = new ForkJoinPool();
         pool.execute(task);
 
-        /**
-         * 1. getActiveThreadCount(): 正在偷取任务、执行任务的线程估计数目(活跃线程)
-         * 2. getStealCount():
-         * 3. getParallelism(): 并行级别
-         */
+
         do {
+            /**
+             * 1. getActiveThreadCount(): 正在偷取任务、执行任务的线程估计数目(活跃线程)
+             * 2. getStealCount():
+             * 3. getParallelism(): 并行级别
+             */
             System.out.printf("Main: thread count: %d\n", pool.getActiveThreadCount());
             System.out.printf("Main: thread steal: %d\n", pool.getStealCount());
             System.out.printf("Main: parallelism: %d\n", pool.getParallelism());
