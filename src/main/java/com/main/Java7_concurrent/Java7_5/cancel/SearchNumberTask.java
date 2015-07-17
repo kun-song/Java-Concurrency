@@ -25,7 +25,7 @@ public class SearchNumberTask extends RecursiveTask<Integer> {
 
     @Override
     protected Integer compute() {
-        System.out.println("Task: " + start + ": " + end);
+        System.out.println("compute Task(" + start + " -> " + end + ")");
 
         int ret;
         if (end - start > 10) {
@@ -47,6 +47,11 @@ public class SearchNumberTask extends RecursiveTask<Integer> {
 
         SearchNumberTask task1 = new SearchNumberTask(numbers, start, mid, number, taskManager);
         SearchNumberTask task2 = new SearchNumberTask(numbers, mid, end, number, taskManager);
+        /**
+         * 将新建任务添加到 TaskManager 中，用于以后 取消所有 操作
+         */
+        taskManager.addTask(task1);
+        taskManager.addTask(task2);
 
         task1.fork();
         task2.fork();
@@ -93,6 +98,6 @@ public class SearchNumberTask extends RecursiveTask<Integer> {
      * 任务取消，输出信息
      */
     public void writeCancelMessage() {
-        System.out.printf("Task: canceled task from %d to %d\n", start, end);
+        System.out.printf("Task(%d -> %d) has been canceled\n", start, end);
     }
 }

@@ -31,8 +31,9 @@ public class TaskManager {
         for (ForkJoinTask<Integer> task : tasks) {
             if (task != cancelTask) {
                 /**
-                 * 1. ForkJoinTask.cancel() 取消任务(运行中)
-                 * 2. 若该任务已经结束，或者由于其他原因无法取消，return false
+                 * 1. ForkJoinTask.cancel() 取消 未开始执行 的任务
+                 * 2. 若该任务已经结束，或者由于其他原因(比如正在执行)无法取消，return false
+                 * 3. 无法取消正在执行的任务，所以最后可能有多个任务都找到了 number
                  */
                 task.cancel(true);
                 ((SearchNumberTask) task).writeCancelMessage();
