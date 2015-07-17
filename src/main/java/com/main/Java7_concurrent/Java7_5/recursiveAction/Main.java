@@ -1,4 +1,4 @@
-package com.main.Java7_concurrent.Java7_5.forkJoinPool;
+package com.main.Java7_concurrent.Java7_5.recursiveAction;
 
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         ProductListGenerator generator = new ProductListGenerator();
-        List<Product> products = generator.generate(10000);
+        List<com.main.Java7_concurrent.Java7_5.recursiveAction.Product> products = generator.generate(10000);
         Task task = new Task(products, 1, products.size(), 0.2);
         /**
          * 1. ForkJoinPool 池中运行 ForkJoinTask(RecursiveTask, RecursiveAction)
@@ -44,7 +44,7 @@ public class Main {
         }
 
         for (int i = 0; i < products.size(); i++) {
-            Product product = products.get(i);
+            com.main.Java7_concurrent.Java7_5.recursiveAction.Product product = products.get(i);
             if (product.getPrice() != 12) {
                 System.out.printf("Error:  %s: %f\n",product.getName(),product.getPrice());
             }

@@ -1,4 +1,4 @@
-package com.main.Java7_concurrent.Java7_5.forkJoinPool;
+package com.main.Java7_concurrent.Java7_5.recursiveAction;
 
 import java.util.List;
 import java.util.concurrent.RecursiveAction;
@@ -17,7 +17,7 @@ public class Task extends RecursiveAction {
     private int last;
     private double increment;   // 价格增加的百分比
 
-    public Task(List<com.main.Java7_concurrent.Java7_5.forkJoinPool.Product> products, int first, int last, double increment) {
+    public Task(List<Product> products, int first, int last, double increment) {
         this.products = products;
         this.first = first;
         this.last = last;
