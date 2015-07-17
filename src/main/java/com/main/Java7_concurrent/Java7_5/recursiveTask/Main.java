@@ -34,6 +34,10 @@ public class Main {
 
         pool.shutdown();
 
+        if (task.isCompletedNormally()) {
+            System.out.println("Main: task has been completed normally");
+        }
+
         pool.awaitTermination(1, TimeUnit.DAYS);
 
         System.out.printf("Main: the Word appears %d times.", task.get());
