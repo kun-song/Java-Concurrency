@@ -53,7 +53,11 @@ public class FolderProcessor extends RecursiveTask<List<String>> {
                 System.out.printf("%s: %d tasks running\n", file.getAbsolutePath(), taskList.size());
             }
         }
-
+        /**
+         * 1. 将子任务列表的计算结果添加到 list 中
+         * 2. 如果不添加，则 list 中只有第一个任务的结果，3 / 606
+         * 3. 没有返回值，直接修改了参数 list
+         */
         addResultsFromTasks(list, taskList);
         return list;
     }
