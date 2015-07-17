@@ -1,0 +1,9 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'org.apache.httpcomponents:httpmime:4.4.1'
+    compile files('libs/httpclient-4.4.1.jar')
+    compile 'com.google.code.gson:gson:2.3.1'
+}
