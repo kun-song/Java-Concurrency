@@ -20,7 +20,7 @@ public class Event implements Delayed {
     }
 
     /**
-     * 剩余延迟时间
+     * 剩余延迟时间，以 纳秒 为单位
      */
     @Override
     public long getDelay(TimeUnit unit) {
