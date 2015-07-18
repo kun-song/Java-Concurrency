@@ -14,6 +14,9 @@ import java.util.concurrent.TimeUnit;
  *      (1) Executor 初始有两个线程，所以前两个任务将被首先执行
  *      (2) 因为工作线程只有两个，后面提交的任务将被阻塞，在等待队列中等待执行，此时因为使用 PriorityBlockingQueue
  *          保存等待任务，所以后面的任务将根据优先级的高低来调度执行
+ * 3. 使用优先级队列
+ *      (1) 为了提高任务等待的合理性，为了让高优先级的任务在等待中先被执行
+ *      (2) 所以未阻塞的任务不受优先级队列调度影响
  */
 public class Main {
     public static void main(String[] args) throws InterruptedException {
