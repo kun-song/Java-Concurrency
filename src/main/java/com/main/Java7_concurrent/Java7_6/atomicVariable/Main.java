@@ -1,7 +1,5 @@
 package com.main.Java7_concurrent.Java7_6.atomicVariable;
 
-import java.util.TreeMap;
-
 /**
  * Author:  satansk
  * Date:    16:30 at 2015/7/18
