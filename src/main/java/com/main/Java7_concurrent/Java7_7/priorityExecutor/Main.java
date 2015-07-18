@@ -10,7 +10,10 @@ import java.util.concurrent.TimeUnit;
  * Email:   satansk@hotmail.com
  *
  * 1. 通过传入 PriorityBlockingQueue 将 ThreadPoolExecutor 改造成基于优先级队列的 Executor
- * 2. 从输出结果来看，优先级高的任务先被执行
+ * 2. 从输出结果来看:
+ *      (1) Executor 初始有两个线程，所以前两个任务将被首先执行
+ *      (2) 因为工作线程只有两个，后面提交的任务将被阻塞，在等待队列中等待执行，此时因为使用 PriorityBlockingQueue
+ *          保存等待任务，所以后面的任务将根据优先级的高低来调度执行
  */
 public class Main {
     public static void main(String[] args) throws InterruptedException {
