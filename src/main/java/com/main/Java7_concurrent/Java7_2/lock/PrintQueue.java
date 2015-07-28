@@ -12,6 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 1. ReentrantLock 可重入锁，可递归调用。
  *
  * 2. 锁加在何处？
+ *
  *      答：临界区，通常是物理上唯一的资源，或者不能同时访问的资源。
  */
 public class PrintQueue {
