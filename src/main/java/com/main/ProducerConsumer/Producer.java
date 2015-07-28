@@ -1,6 +1,5 @@
 package com.main.ProducerConsumer;
 
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 
