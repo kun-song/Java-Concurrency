@@ -1,1 +1,10 @@
+*.class
 /build
+/target/
+.classpath
+.project
+.settings
+
+# idea
+.idea/
+concurrency.iml
