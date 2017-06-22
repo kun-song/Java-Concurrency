@@ -1,0 +1,8 @@
+newCachedThreadPool() 创建一个：
+
+	* 基本容量为 0
+	* 最大容量为 Integer.MAX_VALUE
+	* 存活时间为 1 分钟
+	* 使用 SynchronziedQueue<Runnable>
+
+的 ThreadPoolExecutor
